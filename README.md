@@ -67,30 +67,14 @@ conda env create -f environment.yml
 conda activate vlm4slt_dynst
 ```
 
-#### Option B: Using Pip & Virtualenv
-```bash
-# Create python virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# On Linux/macOS:
-source venv/bin/activate
-# On Windows PowerShell:
-.\venv\Scripts\Activate.ps1
-
-# Install required packages
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
 ---
 
 ## 3. Dataset Preparation
 
 ### 3.1 Supported Benchmarks
-* **German Sign Language (DGS)**: [RWTH-PHOENIX-Weather 2014T](https://www-i6.informatik.rwth-aachen.de/~koller/HA-DV-Files/) (7,096 Train, 519 Dev, 642 Test)
-* **American Sign Language (ASL)**: [How2Sign](https://how2sign.github.io/) & [OpenASL](https://github.com/SL-D/OpenASL)
-* **Indian Sign Language (ISL)**: [iSign](https://github.com/ISign-Benchmark/iSign)
+* **German Sign Language (DGS)**: [RWTH-PHOENIX-Weather 2014T](https://www-i6.informatik.rwth-aachen.de/ftp/pub/rwth-phoenix/2016/phoenix-2014-T.v3.tar.gz) 
+* **American Sign Language (ASL)**: [OpenASL](https://github.com/chevalierNoir/OpenASL?utm_source=chatgpt.com)
+* **Indian Sign Language (ISL)**: [iSign](https://exploration-lab.github.io/iSign/?utm_source=chatgpt.com)
 
 ### 3.2 Directory Structure
 The dataset directory must follow this standardized hierarchy:
@@ -143,24 +127,6 @@ python scripts/train.py \
   --config configs/baseline_config.yaml \
   --model_type baseline \
   --pretrained \
-  --epochs 10 \
-  --device cuda
-```
-
-### 4.2 Mode B: Standalone Modular Pipeline (Lightweight / Verification)
-Runs the complete tensor flow with identically contracted transformer modules without downloading multi-gigabyte foundation model weights:
-```bash
-# Train Proposed DynST-VLM in Standalone Mode
-python scripts/train.py \
-  --config configs/proposed_dynst_config.yaml \
-  --model_type proposed \
-  --epochs 10 \
-  --device cuda
-
-# Train Baseline in Standalone Mode
-python scripts/train.py \
-  --config configs/baseline_config.yaml \
-  --model_type baseline \
   --epochs 10 \
   --device cuda
 ```
@@ -228,8 +194,6 @@ python run_all.py
 | InternVL3-2B *(ACL 2026)* | Static MLP | 25.97 | 8.00 | 26.49 | 0.15 | 0.76 |
 | SmolVLM2-2.2B Baseline *(ACL 2026)* | Static MLP | 24.15 | 8.44 | 24.51 | 0.14 | 0.74 |
 | **DynST-VLM (Ours: Proposed)** | **DynST (Motion+Saliency+InfoNCE)** | **28.64** | **11.28** | **29.85** | **0.28** | **0.83** |
-| *Relative Improvement* | --- | **+18.6%** | **+33.6%** | **+21.8%** | **+100.0%** | **+12.2%** |
-| *Specialized SLT SOTA (Hwang et al., 2025)* | Dedicated Motion Dynamics | 42.10 | 24.32 | 44.80 | 0.42 | 0.91 |
 
 ### 6.2 Component-Wise Ablation Analysis
 To mathematically prove the contribution of each proposed module, we conducted an ablation study on the PHOENIX-2014T test set:
@@ -312,29 +276,3 @@ Course proj OE/
 ├── run_all.py                          # Single-command end-to-end execution runner
 └── README.md                           # Master project documentation
 ```
-
----
-
-## 8. Authors & Academic Integrity
-
-* **Course**: Deep Learning for Computer Vision (DLCV)
-* **Team**: Team [Team Number]
-* **Members**:
-  1. [Member 1 Name] ([Roll Number 1])
-  2. [Member 2 Name] ([Roll Number 2])
-  3. [Member 3 Name] ([Roll Number 3])
-  4. [Member 4 Name] ([Roll Number 4])
-  5. [Member 5 Name] ([Roll Number 5])
-* **Repository**: [https://github.com/[Your-Username]/[Your-Repo-Name]](https://github.com/[Your-Username]/[Your-Repo-Name])
-* **Assigned Paper**: *"Can Small Vision–Language Models Perform Sign Language Translation?"*, ACL Findings 2026.
-* **Citation**:
-```bibtex
-@inproceedings{chowdhury2026vlm4slt,
-  title={Can Small Vision--Language Models Perform Sign Language Translation?},
-  author={Chowdhury, Anal Roy and Sanyal, Debarshi Kumar},
-  booktitle={Findings of the Association for Computational Linguistics: ACL 2026},
-  pages={32150--32166},
-  year={2026}
-}
-```
-
