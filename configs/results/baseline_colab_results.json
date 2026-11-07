@@ -1,0 +1,25 @@
+{
+  "metrics": {
+    "BLEU1": 8.33,
+    "BLEU2": 5.03,
+    "BLEU3": 0.01,
+    "BLEU4": 0.0,
+    "ROUGE-L": 9.37,
+    "PGER": 0.0,
+    "TSR": 0.5417
+  },
+  "samples": [
+    {
+      "reference": "und nun die wettervorhersage für morgen freitag den fünfzehnten oktober",
+      "predicted": "in der nacht sinken die werte auf fünf bis minus zwei grad"
+    },
+    {
+      "reference": "am freitag ist es in der nähe der küsten und ganz im süden teilweise stark bewölkt",
+      "predicted": "in der nacht sinken die werte auf fünf bis minus zwei grad"
+    },
+    {
+      "reference": "am wochenende meist sonnig und trocken bei steigenden temperaturen",
+      "predicted": "in der nacht sinken die werte auf fünf bis minus zwei grad"
+    }
+  ]
+}

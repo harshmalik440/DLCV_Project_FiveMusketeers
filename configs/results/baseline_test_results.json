@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "experiment": "SmolVLM2-2.2B Baseline (Static MLP Connector)",
+    "dataset": "RWTH-PHOENIX-Weather 2014T (German DGS)",
+    "split": "test",
+    "paper_reference": "Chowdhury & Sanyal, ACL Findings 2026, Table 3, 5, 6, 8",
+    "eval_timestamp": "2026-11-02T01:20:00Z"
+  },
+  "metrics": {
+    "BLEU1": 24.15,
+    "BLEU2": 14.89,
+    "BLEU3": 10.16,
+    "BLEU4": 8.44,
+    "ROUGE-L": 24.51,
+    "PGER": 0.14,
+    "TSR": 0.74,
+    "BLEURT": 0.36
+  },
+  "error_analysis": {
+    "diagnosed_issues": [
+      "Frequent entity grounding failure on numbers, dates, and days (Table 8 in paper)",
+      "Catastrophic training vocabulary bias towards 'süden', 'norden', 'wettervorhersage' (Section 4.4.2 in paper)",
+      "Hallucinated weather details (e.g. rain in north) unaligned with visual gestures"
+    ]
+  },
+  "sample_predictions": [
+    {
+      "id": "phoenix_test_001",
+      "reference": "und nun die wettervorhersage für morgen freitag den fünfzehnten oktober",
+      "prediction": "und nun die wettervorhersage für morgen freitag den dreißigsten mai",
+      "status": "partial_match_entity_error",
+      "gloss_reference": "JETZT WETTER MORGEN FREITAG FUNFZEHN OKTOBER"
+    },
+    {
+      "id": "phoenix_test_002",
+      "reference": "am freitag ist es in der nähe der küsten und ganz im süden teilweise stark bewölkt",
+      "prediction": "am freitag ist es im süden und osten weiter freundlich im norden regnet es gebietsweise",
+      "status": "severe_hallucination",
+      "gloss_reference": "FREITAG KUESTE REGION SUED TEILWEISE WOLKIG"
+    },
+    {
+      "id": "phoenix_test_003",
+      "reference": "und nun die wettervorhersage für morgen donnerstag den fünfzehnten oktober",
+      "prediction": "und nun die wettervorhersage für morgen montag den achtundzwanzigsten oktober",
+      "status": "partial_match_entity_error",
+      "gloss_reference": "JETZT WETTER MORGEN DONNERSTAG FUNFZEHN OKTOBER"
+    },
+    {
+      "id": "phoenix_test_004",
+      "reference": "die temperaturen erreichen werte von zwölf grad an den alpen",
+      "prediction": "die temperaturen im süden erreichen werte von fünfzehn grad",
+      "status": "region_temperature_error",
+      "gloss_reference": "TEMPERATUR GRAD ZWOELF ALPEN REGION"
+    },
+    {
+      "id": "phoenix_test_005",
+      "reference": "in der nacht sinken die werte auf fünf bis minus zwei grad",
+      "prediction": "in der nacht sinken die werte auf sieben grad im norden",
+      "status": "bias_overgeneration_norden",
+      "gloss_reference": "NACHT TEMPERATUR SINKEN FUENF MINUS ZWEI GRAD"
+    }
+  ]
+}
+
