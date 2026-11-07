@@ -1,10 +1,5 @@
 # DynST-VLM: Dynamic Spatio-Temporal Difference Connector with Contrastive Semantic Anchoring for Sign Language Translation
 
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![PyTorch 2.1+](https://img.shields.io/badge/PyTorch-2.1%2B-orange.svg)](https://pytorch.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Track: DLCV 2026](https://img.shields.io/badge/Course-DLCV%20Project%20Assessment-purple.svg)]()
-
 > **Deep Learning for Computer Vision (DLCV) Course Project Assessment**  
 > **Assigned Paper:** *"Can Small Vision–Language Models Perform Sign Language Translation?"* (Anal Roy Chowdhury & Debarshi Kumar Sanyal, Findings of ACL 2026)  
 > **Original Implementation Reference:** [https://github.com/Analroy/vlm4slt](https://github.com/Analroy/vlm4slt)  
