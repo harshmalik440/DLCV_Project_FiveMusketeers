@@ -1,38 +1,54 @@
-# Model Checkpoints Directory
+# DynST-VLM – Model Checkpoints
 
-This directory contains trained and initialized model weights for the Sign Language Translation evaluation pipelines.
+This folder contains the model checkpoints used in the DynST-VLM project.
 
-## Directory Structure
+Due to their large file sizes, the checkpoint files are hosted externally on Google Drive instead of being committed directly to this GitHub repository.
+
+## 1. Checkpoint Downloads
+
+| Model | Checkpoint File | Download |
+|---|---|---|
+| Baseline | `baseline_best.pt` | [Download Baseline](PASTE_BASELINE_GOOGLE_DRIVE_LINK) |
+| Proposed DynST-VLM | `proposed_best.pt` | [Download Proposed](PASTE_PROPOSED_GOOGLE_DRIVE_LINK) |
+
+## 2. Installation Instructions
+
+1. Open the appropriate Google Drive link.
+2. Download the required checkpoint file.
+3. Place the downloaded `.pt` files directly inside this `checkpoints/` folder.
+4. Ensure that the filenames match those expected by the inference and evaluation scripts.
+
+Expected directory structure:
+
+```text
+DynST-VLM/
+│
+├── checkpoints/
+│   ├── README.md
+│   ├── baseline_best.pt
+│   └── proposed_best.pt
+│
+├── configs/
+├── models/
+├── scripts/
+├── data/
+├── results/
+├── logs/
+├── requirements.txt
+└── README.md
 ```
-checkpoints/
-├── baseline/
-│   └── baseline_best.pt        # SmolVLM2-2.2B Baseline with Static MLP Connector
-└── proposed/
-    └── proposed_best.pt        # DynST-VLM with Motion-Difference & Articulator Saliency
-```
 
-## Checkpoint Format
-Each `.pt` checkpoint file is a serialized PyTorch dictionary containing:
-* `epoch`: Training epoch at checkpoint creation.
-* `model_state_dict`: Complete weights for connector, LoRA adapters, and language model projections.
-* `vocab`: Tokenizer token-to-ID vocabulary mapping.
-* `loss`: Training / validation loss at optimal checkpoint.
-* `model_type`: `"baseline"` or `"proposed"`.
-* `description`: Model architecture and training specification.
+## 3. Important Notes
 
-## Generation
-If initializing reference checkpoints from scratch:
-```bash
-python scripts/generate_sample_checkpoints.py
-```
+- Checkpoints are hosted externally because of their large file sizes.
+- Google Drive access should be set to Anyone with the link – Viewer.
+- Ensure that the downloaded files are complete before running inference.
+- Do not rename the checkpoint files unless the corresponding paths in the code are updated.
 
-## Evaluation Commands
-To evaluate either checkpoint against the test benchmark:
-```bash
-# Evaluate baseline
-python scripts/evaluate.py --checkpoint checkpoints/baseline/baseline_best.pt --split test
+## 4. Project Information
 
-# Evaluate proposed DynST-VLM
-python scripts/evaluate.py --checkpoint checkpoints/proposed/proposed_best.pt --split test
-```
+**Project:** DynST-VLM – Dynamic Spatio-Temporal Difference Connector with Contrastive Semantic Anchoring for Sign Language Translation.
 
+**Team:** Team 26
+
+Refer to the [main project README](../README.md) for installation, training, evaluation, and inference instructions.
