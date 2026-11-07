@@ -2,7 +2,6 @@
 Aggregates quantitative comparison between the Paper Baselines,
 the Specialized SOTA, and our Proposed DynST-VLM Architecture.
 Reads directly from results/ JSON logs (including Colab run exports).
-Generates both full-width and compact single-column LaTeX tables for 1-page reports.
 """
 
 import os
