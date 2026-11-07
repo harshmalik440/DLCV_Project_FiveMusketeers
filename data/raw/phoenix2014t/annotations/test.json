@@ -1,0 +1,23 @@
+[
+  {
+    "id": "phoenix_test_001",
+    "signer": "Signer04",
+    "text": "und nun die wettervorhersage für morgen freitag den fünfzehnten oktober",
+    "gloss": "JETZT WETTER MORGEN FREITAG FUNFZEHN OKTOBER",
+    "num_frames": 118
+  },
+  {
+    "id": "phoenix_test_002",
+    "signer": "Signer05",
+    "text": "am freitag ist es in der nähe der küsten und ganz im süden teilweise stark bewölkt",
+    "gloss": "FREITAG KUESTE REGION SUED TEILWEISE WOLKIG",
+    "num_frames": 135
+  },
+  {
+    "id": "phoenix_test_003",
+    "signer": "Signer01",
+    "text": "am wochenende meist sonnig und trocken bei steigenden temperaturen",
+    "gloss": "WOCHENENDE MEIST SONNE TROCKEN TEMPERATUR STEIGEN",
+    "num_frames": 102
+  }
+]

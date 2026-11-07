@@ -1,0 +1,62 @@
+# Proposed Configuration: DynST-VLM (Dynamic Spatio-Temporal Difference Connector + Contrastive Semantic Anchoring)
+# Novel architecture designed to resolve temporal blindness, background dilution, and vocabulary bias
+
+experiment_name: "proposed_dynst_smolvlm2_phoenix"
+dataset:
+  name: "PHOENIX-2014T"
+  data_dir: "./data/raw/phoenix2014t"
+  max_frames: 64
+  sampling_strategy: "deterministic_uniform"
+  img_size: 224 # Set to 384 for full SigLIP-SO400M resolution (paper default)
+  vocab_size: 2887
+
+model:
+  name: "SmolVLM2-2.2B-Instruct"
+  vision_encoder: "SigLIP-SO400M"
+  vision_frozen: true
+  connector_type: "dynst" # Dynamic Spatio-Temporal Difference Connector
+  vision_dim: 1152
+  llm_dim: 2048
+  connector_hidden_dim: 2048
+  dropout: 0.1
+
+  # DynST Specific Parameters (Novelty Components)
+  motion_stream:
+    temporal_kernel_size: 3
+    temporal_dilation: 1
+    gating_reduction: 4
+  articulator_pooling:
+    enabled: true
+    saliency_beta: 0.3
+    pool_ratio: 0.5  # Focuses tokens on motion-salient articulators
+  contrastive_head:
+    enabled: true
+    projection_dim: 512
+    temperature: 0.07
+    loss_weight: 0.25 # Lambda weight balancing cross-entropy and InfoNCE
+
+lora:
+  enabled: true
+  r: 64
+  lora_alpha: 64
+  lora_dropout: 0.1
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+training:
+  epochs: 10
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 1.0e-4
+  lr_scheduler: "cosine"
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  mixed_precision: "bf16"
+  seed: 42
+  checkpoint_dir: "./checkpoints/proposed"
+  log_interval: 50
+
+inference:
+  max_new_tokens: 128
+  decoding_strategy: "greedy"
+  temperature: 0.0
+

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "phoenix_dev_001",
+    "signer": "Signer05",
+    "text": "und nun die wettervorhersage für morgen donnerstag den fünfzehnten oktober",
+    "gloss": "JETZT WETTER MORGEN DONNERSTAG FUNFZEHN OKTOBER",
+    "num_frames": 110
+  },
+  {
+    "id": "phoenix_dev_002",
+    "signer": "Signer03",
+    "text": "am donnerstag im norden regnerisch im süden oft heiter",
+    "gloss": "DONNERSTAG NORD REGEN SUED OFT HEITER",
+    "num_frames": 125
+  }
+]

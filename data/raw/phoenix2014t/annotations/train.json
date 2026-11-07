@@ -1,0 +1,44 @@
+[
+  {
+    "id": "phoenix_train_001",
+    "signer": "Signer01",
+    "text": "und nun die wettervorhersage für morgen freitag den fünfzehnten oktober",
+    "gloss": "JETZT WETTER MORGEN FREITAG FUNFZEHN OKTOBER",
+    "num_frames": 115
+  },
+  {
+    "id": "phoenix_train_002",
+    "signer": "Signer02",
+    "text": "am freitag ist es in der nähe der küsten und ganz im süden teilweise stark bewölkt",
+    "gloss": "FREITAG KUESTE REGION SUED TEILWEISE WOLKIG REGEN",
+    "num_frames": 142
+  },
+  {
+    "id": "phoenix_train_003",
+    "signer": "Signer03",
+    "text": "im osten und südosten freundlich und trocken mit viel sonnenschein",
+    "gloss": "OST SUEDOST FREUNDLICH TROCKEN SONNE VIEL",
+    "num_frames": 98
+  },
+  {
+    "id": "phoenix_train_004",
+    "signer": "Signer01",
+    "text": "die temperaturen erreichen werte von zwölf grad an den alpen",
+    "gloss": "TEMPERATUR GRAD ZWOELF ALPEN REGION",
+    "num_frames": 105
+  },
+  {
+    "id": "phoenix_train_005",
+    "signer": "Signer04",
+    "text": "der wind weht schwach bis mäßig aus nördlichen richtungen",
+    "gloss": "WIND WEHEN SCHWACH MAESSIG NORD RICHTUNG",
+    "num_frames": 88
+  },
+  {
+    "id": "phoenix_train_006",
+    "signer": "Signer02",
+    "text": "in der nacht sinken die werte auf fünf bis minus zwei grad",
+    "gloss": "NACHT TEMPERATUR SINKEN FUENF MINUS ZWEI GRAD",
+    "num_frames": 120
+  }
+]

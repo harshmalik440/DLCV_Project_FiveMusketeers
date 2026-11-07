@@ -1,0 +1,48 @@
+# Baseline Configuration: Standard VLM with Static MLP Connector
+# Based on the ACL 2026 paper: "Can Small Vision-Language Models Perform Sign Language Translation?"
+
+experiment_name: "baseline_smolvlm2_phoenix"
+dataset:
+  name: "PHOENIX-2014T"
+  data_dir: "./data/raw/phoenix2014t"
+  max_frames: 64
+  sampling_strategy: "deterministic_uniform"
+  img_size: 224 # Set to 384 for full SigLIP-SO400M resolution (paper default)
+  vocab_size: 2887
+
+model:
+  name: "SmolVLM2-2.2B-Instruct"
+  vision_encoder: "SigLIP-SO400M"
+  vision_frozen: true
+  connector_type: "mlp" # Standard static 2-layer MLP connector as in the baseline
+  vision_dim: 1152
+  llm_dim: 2048
+  connector_hidden_dim: 2048
+  dropout: 0.1
+
+lora:
+  enabled: true
+  r: 64
+  lora_alpha: 64
+  lora_dropout: 0.1
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+training:
+  epochs: 10
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 1.0e-4
+  lr_scheduler: "constant"
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  mixed_precision: "bf16"
+  loss_type: "cross_entropy"
+  seed: 42
+  checkpoint_dir: "./checkpoints/baseline"
+  log_interval: 50
+
+inference:
+  max_new_tokens: 128
+  decoding_strategy: "greedy"
+  temperature: 0.0
+
