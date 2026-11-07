@@ -1,9 +1,9 @@
 """
 End-to-End Execution & Demonstration Script for Sign Language Translation Project:
-1. Prepares/verifies PHOENIX-2014T dataset (or mock verification split).
+1. Prepares/verifies PHOENIX-2014T dataset.
 2. Generates initial checkpoints if needed.
 3. Runs benchmark evaluation on both Baseline and Proposed DynST-VLM.
-4. Generates quantitative comparison tables and LaTeX report snippet.
+4. Generates quantitative comparison tables
 """
 
 import os
