@@ -4,11 +4,11 @@
 > **Assigned Paper:** *"Can Small Vision–Language Models Perform Sign Language Translation?"* (Anal Roy Chowdhury & Debarshi Kumar Sanyal, Findings of ACL 2026) 
 > **Team:** FiveMusketeers
 > **Members:**  
-> 1. [Harsh] ([230101045])  
-> 2. [Kushal Dornahalli] ([230102052])  
-> 3. [Pratyush Upadhyay] ([230122039])  
-> 4. [Nishtha Garg] ([230122033])  
-> 5. [Anushka Sharma] ([230102011]) 
+> 1. Harsh [230101045]  
+> 2. Kushal Dornahalli [230102052]  
+> 3. Pratyush Upadhyay [230122039]  
+> 4. Nishtha Garg [230122033]  
+> 5. Anushka Sharma [230102011] 
 
 ---
 
