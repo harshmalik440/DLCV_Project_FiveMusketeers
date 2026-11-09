@@ -8,8 +8,8 @@ Due to their large file sizes, the checkpoint files are hosted externally on Goo
 
 | Model | Checkpoint File | Download |
 |---|---|---|
-| Baseline | `baseline_best.pt` | [Download Baseline](PASTE_BASELINE_GOOGLE_DRIVE_LINK) |
-| Proposed DynST-VLM | `proposed_best.pt` | [Download Proposed](PASTE_PROPOSED_GOOGLE_DRIVE_LINK) |
+| Baseline | `baseline_best.pt` | [Download Baseline](https://drive.google.com/file/d/1UShvNbWoFgZuWRqZDa6gr_60aoSNqu-N/view?usp=drive_link) |
+| Proposed DynST-VLM | `proposed_best.pt` | [Download Proposed](https://drive.google.com/file/d/1mmk5zncVWFWcK-0q2YhwfOGP8dFSWTCM/view?usp=drive_link) |
 
 ## 2. Installation Instructions
 
