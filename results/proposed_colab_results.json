@@ -1,0 +1,25 @@
+{
+  "metrics": {
+    "BLEU1": 8.46,
+    "BLEU2": 0.0,
+    "BLEU3": 0.0,
+    "BLEU4": 0.0,
+    "ROUGE-L": 11.28,
+    "PGER": 0.0556,
+    "TSR": 0.5676
+  },
+  "samples": [
+    {
+      "reference": "und nun die wettervorhersage für morgen freitag den fünfzehnten oktober",
+      "predicted": "die temperaturen erreichen werte von zwölf grad an den alpen"
+    },
+    {
+      "reference": "am freitag ist es in der nähe der küsten und ganz im süden teilweise stark bewölkt",
+      "predicted": "die temperaturen erreichen werte von zwölf grad an den alpen"
+    },
+    {
+      "reference": "am wochenende meist sonnig und trocken bei steigenden temperaturen",
+      "predicted": "die temperaturen erreichen werte von zwölf grad an den alpen"
+    }
+  ]
+}

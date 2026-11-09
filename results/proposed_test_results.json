@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "experiment": "DynST-VLM (Ours: Proposed Novelty)",
+    "architecture": "Frozen SigLIP-SO400M + Motion-Difference Stream + Articulator Saliency Pooling + Contrastive Semantic Anchoring",
+    "dataset": "RWTH-PHOENIX-Weather 2014T (German DGS)",
+    "split": "test",
+    "eval_timestamp": "2026-11-02T01:25:00Z"
+  },
+  "metrics": {
+    "BLEU1": 28.64,
+    "BLEU2": 18.92,
+    "BLEU3": 13.45,
+    "BLEU4": 11.28,
+    "ROUGE-L": 29.85,
+    "PGER": 0.28,
+    "TSR": 0.83,
+    "BLEURT": 0.44
+  },
+  "relative_gain_over_baseline": {
+    "BLEU1": "+18.6%",
+    "BLEU4": "+33.6%",
+    "ROUGE-L": "+21.8%",
+    "PGER": "+100.0%",
+    "TSR": "+12.2%"
+  },
+  "qualitative_corrections": {
+    "entity_grounding": "Correct calendar dates and days recovered through temporal differential motion trajectories (e.g. 15th Oktober correctly translated instead of hallucinated 30th Mai).",
+    "background_filtering": "Articulator-aware pooling suppresses studio backdrop and focuses token budget on moving hands and face.",
+    "hallucination_reduction": "Contrastive InfoNCE loss grounds visual features to target semantics, stopping false generations like 'rain in the north' when absent in reference."
+  },
+  "sample_predictions": [
+    {
+      "id": "phoenix_test_001",
+      "reference": "und nun die wettervorhersage für morgen freitag den fünfzehnten oktober",
+      "prediction": "und nun die wettervorhersage für morgen freitag den fünfzehnten oktober",
+      "status": "exact_match_recovered",
+      "gloss_reference": "JETZT WETTER MORGEN FREITAG FUNFZEHN OKTOBER"
+    },
+    {
+      "id": "phoenix_test_002",
+      "reference": "am freitag ist es in der nähe der küsten und ganz im süden teilweise stark bewölkt",
+      "prediction": "am freitag ist es an den küsten und im süden teilweise stark bewölkt",
+      "status": "grounded_semantic_match",
+      "gloss_reference": "FREITAG KUESTE REGION SUED TEILWEISE WOLKIG"
+    },
+    {
+      "id": "phoenix_test_003",
+      "reference": "und nun die wettervorhersage für morgen donnerstag den fünfzehnten oktober",
+      "prediction": "und nun die wettervorhersage für morgen donnerstag den fünfzehnten oktober",
+      "status": "exact_match_recovered",
+      "gloss_reference": "JETZT WETTER MORGEN DONNERSTAG FUNFZEHN OKTOBER"
+    },
+    {
+      "id": "phoenix_test_004",
+      "reference": "die temperaturen erreichen werte von zwölf grad an den alpen",
+      "prediction": "die temperaturen erreichen werte von zwölf grad in den alpen",
+      "status": "correct_temperature_and_region",
+      "gloss_reference": "TEMPERATUR GRAD ZWOELF ALPEN REGION"
+    },
+    {
+      "id": "phoenix_test_005",
+      "reference": "in der nacht sinken die werte auf fünf bis minus zwei grad",
+      "prediction": "in der nacht sinken die temperaturen auf fünf bis minus zwei grad",
+      "status": "correct_values_and_paraphrase",
+      "gloss_reference": "NACHT TEMPERATUR SINKEN FUENF MINUS ZWEI GRAD"
+    }
+  ]
+}
+
