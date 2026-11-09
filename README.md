@@ -1,16 +1,14 @@
 # DynST-VLM: Dynamic Spatio-Temporal Difference Connector with Contrastive Semantic Anchoring for Sign Language Translation
 
-> **Deep Learning for Computer Vision (DLCV) Course Project Assessment**  
-> **Assigned Paper:** *"Can Small Vision–Language Models Perform Sign Language Translation?"* (Anal Roy Chowdhury & Debarshi Kumar Sanyal, Findings of ACL 2026)  
-> **Original Implementation Reference:** [https://github.com/Analroy/vlm4slt](https://github.com/Analroy/vlm4slt)  
-> **Team:** Team [Team Number]  
+> **Deep Learning for Computer Vision (DLCV) Course Project**  
+> **Assigned Paper:** *"Can Small Vision–Language Models Perform Sign Language Translation?"* (Anal Roy Chowdhury & Debarshi Kumar Sanyal, Findings of ACL 2026) 
+> **Team:** FiveMusketeers
 > **Members:**  
-> 1. [Member 1 Name] ([Roll Number 1])  
-> 2. [Member 2 Name] ([Roll Number 2])  
-> 3. [Member 3 Name] ([Roll Number 3])  
-> 4. [Member 4 Name] ([Roll Number 4])  
-> 5. [Member 5 Name] ([Roll Number 5])  
-> **Repository:** [https://github.com/[Your-Username]/[Your-Repo-Name]](https://github.com/[Your-Username]/[Your-Repo-Name])
+> 1. [Harsh] ([230101045])  
+> 2. [Kushal Dornahalli] ([230102052])  
+> 3. [Pratyush Upadhyay] ([230122039])  
+> 4. [Nishtha Garg] ([230122033])  
+> 5. [Anushka Sharma] ([230102011]) 
 
 ---
 
