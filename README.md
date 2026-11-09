@@ -33,11 +33,6 @@ To overcome these limitations without incurring the prohibitive computational co
 * **Motion-Guided Dynamic Spatial Pooling (ADSP)**: Computes patch-level temporal motion variance $s_p = \frac{1}{T-1} \sum_{t=2}^T \|H_{t,p} - H_{t-1,p}\|_2$ across the video. Rather than requiring complex bounding-box detectors, this temporal feature differential naturally concentrates token representation onto active signing motion regions (manual gestures and facial movements) while filtering out uninformative static background tokens by up to $75\%$.
 * **Contrastive Semantic Anchoring ($\mathcal{L}_{\text{CSA}}$)**: Enforces an auxiliary symmetric InfoNCE objective between pooled video representations and target sentence semantic embeddings, equipped with a FIFO memory queue ($K=64$) to preserve true negative contrastive pairs even when training with a physical batch size of $B=1$. This forces the connector to align visual tokens directly with the intended semantic concept, eliminating training set vocabulary bias and suppressing hallucinations.
 
-### 1.4 Architecture Dual-Mode Implementation
-The codebase provides dual-mode execution:
-1. **Mode A (Pretrained VLM)**: Loads official Hugging Face pretrained vision backbones (SigLIP / InternViT) and causal language decoders (SmolLM2 / LLaMA) with full PEFT LoRA adaptation on attention projections ($W_q, W_k, W_v, W_o$) and MLP layers.
-2. **Mode B (Standalone Modular Pipeline)**: Fully self-contained modular transformer implementation matching the identical dataflow and tensor contracts, allowing instantaneous testing, CI verification, and execution in memory-constrained environments without downloading multi-gigabyte foundation model weights.
-
 ---
 
 ## 2. Environment and Dependencies
@@ -57,15 +52,44 @@ The codebase provides dual-mode execution:
 ### 2.3 Installation Steps
 
 #### Option A: Using Conda (Recommended)
-```bash
-# Clone the repository
-git clone https://github.com/your-team/dynst-vlm4slt.git
-cd dynst-vlm4slt
 
-# Create and activate conda environment
+**Step 1: Clone the repository**
+
+```bash
+git clone https://github.com/harshmalik440/DLCV_Project_FiveMusketeers.git
+
+cd DLCV_Project_FiveMusketeers
+```
+
+**Step 2: Create and activate the Conda environment**
+
+```bash
 conda env create -f environment.yml
+
 conda activate vlm4slt_dynst
 ```
+
+**Step 3: Install any remaining dependencies (if required)**
+
+```bash
+pip install -r requirements.txt
+```
+
+**Step 4: Verify the installation**
+
+```bash
+python --version
+python -c "import torch; print('PyTorch:', torch.__version__)"
+```
+
+**Step 5: Prepare the dataset**
+
+Follow the instructions in the Dataset Preparation section to download and configure the required dataset.
+
+**Step 6: Download model checkpoints**
+
+Download the required model checkpoints using the links provided in `checkpoints/README.md` and place them inside the `checkpoints/` directory.
+
 
 ---
 
